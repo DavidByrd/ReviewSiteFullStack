@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>A Comic</title>
+</head>
+<body>
+	<h1>A List of Comics</h1>
+
+	<div th:each = "comic: ${comic}">
+		<p th:text = "${ComicReview.title}"></p>
+		<p th:text = "${ComicReview.description}"></p>
+		<p th:text = "${ComicReview.review}"></p>
+		<a href="http://localhost:8080/show-comics">Back to home</a>
+	</div>
+
+</body>
+</html>

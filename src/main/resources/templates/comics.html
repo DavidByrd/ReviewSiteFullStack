@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>comics</title>
+</head>
+<body>
+	<h1>A List of Comic Titles</h1>
+
+	<img src="sp_post_master-1-960x540.jpg"alt="The best SuperHero there is!!!.">
+
+	<div th:each="ComicReview: ${ComicReviews}">
+		<li>
+		<a th:href="@{/ComicReview(comicId=${ComicReview.Id})}" th:text="${ComicReview.title}"></a>
+		</li>
+	</div>
+
+</body>
+</html>

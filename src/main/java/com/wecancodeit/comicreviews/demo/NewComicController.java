@@ -43,7 +43,7 @@ public class NewComicController {
 
 		if (category.isPresent()) {
 			model.addAttribute("category", category.get());
-			model.addAttribute("comics", comicRepo.findByCategoryContains(category.get()));
+			model.addAttribute("comics", comicRepo.findByCategory(category.get()));
 
 			return "category";
 		}

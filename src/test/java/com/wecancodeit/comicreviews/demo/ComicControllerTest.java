@@ -78,7 +78,7 @@ public class ComicControllerTest {
 		
 		underTest.findOneCategory(arbitraryCategoryId, model);
 		
-		verify(model).addAttribute("categorys", category);
+		verify(model).addAttribute("category", category);
 		
 		
 		}

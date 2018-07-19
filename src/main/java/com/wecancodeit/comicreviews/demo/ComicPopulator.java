@@ -28,11 +28,11 @@ public class ComicPopulator implements CommandLineRunner {
 		mature = categoryRepo.save(mature);
 		
 		Comic invincible = new Comic("Invincible", "The story of Mark Grayson, the son of the worlds most powerful hero, Omni-man", "Thumbs Up! This is my favorite series by Image Comics", teen);
-		teen = categoryRepo.save(teen);
+		invincible = comicRepo.save(invincible);
 		Comic spiderman = new Comic("SpiderMan", "The heroics of Peter Parker, bitten by a radioactive spider and became your friendly neighborhood Spiderman", "Thumbs Up! My love for SpiderMan trnscends time and space!", allAges);
-		allAges = categoryRepo.save(allAges);
+		spiderman = comicRepo.save(spiderman);
 		Comic saga = new Comic("Saga", "A family caught in the middle of an intergalactic war", "Thumbs Up! Take Romeo & Juliet, social commentary, Star Wars, and adult drama, put it all in a blender and you have Saga!", mature);
-		mature = categoryRepo.save(mature);
+		saga = comicRepo.save(saga);
 		
 		issueRepo.save(new Issue("Issue One", saga));
 		issueRepo.save(new Issue("Issue One", invincible));

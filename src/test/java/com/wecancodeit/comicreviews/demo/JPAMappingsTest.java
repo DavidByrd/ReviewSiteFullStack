@@ -111,7 +111,7 @@ public class JPAMappingsTest {
 	entityManager.flush();
 	entityManager.clear();
 	
-	Collection<Comic> comicsForCategory = comicRepo.findByCategoryContains(mature);
+	Collection<Comic> comicsForCategory = comicRepo.findByCategory(mature);
 	
 	assertThat(comicsForCategory, containsInAnyOrder(sandman, saga));
 	

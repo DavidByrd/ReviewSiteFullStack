@@ -23,7 +23,7 @@ public class NewComicController {
 		Optional<Comic> comic = comicRepo.findById(id);
 
 		if (comic.isPresent()) {
-			model.addAttribute("comics", comic.get());
+			model.addAttribute("comic", comic.get());
 			return "comic";
 		}
 		throw new ComicNotFoundException();

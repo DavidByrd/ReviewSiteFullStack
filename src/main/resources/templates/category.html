@@ -11,14 +11,14 @@
 <body>
     <header>
       <h1 th:text = "'Category: ' + ${category.name}"></h1>
-      <h2>Still, Amazon's Top Competitor... </h2>
+      
     </header>
     
     <main>
       <h2>Comics:</h2>
       <div th:each = "comic:${category.comics}">
         <a th:href = "@{/comic(id=${comic.id})}"
-        th:text = "${comic.name}"></a>
+        th:text = "${comic.title}"></a>
       </div>
 
     </main>

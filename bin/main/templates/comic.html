@@ -10,14 +10,14 @@
 	<title>A Comic</title>
 </head>
 <body>
-	<h1>A List of Comics</h1>
+	<h1 th:text =${comic.title}></h1>
 
-	<div th:each = "comic: ${comic}">
-		<p th:text = "${ComicReview.title}"></p>
-		<p th:text = "${ComicReview.description}"></p>
-		<p th:text = "${ComicReview.review}"></p>
+	
+		<p th:text = "${comic.title}"></p>
+		<p th:text = "${comic.description}"></p>
+		<p th:text = "${comic.review}"></p>
 		<a href="http://localhost:8080/show-comics">Back to home</a>
-	</div>
+
 
 </body>
 </html>

@@ -116,7 +116,7 @@ public class NewComicControllerMockMvcTest {
 		long arbitraryCategoryId = 20;
 
 		when(categoryRepo.findById(arbitraryCategoryId)).thenReturn(Optional.of(category));
-		mvc.perform(get("/category?id=20")).andExpect(status().isNotFound());
+		mvc.perform(get("/category?id=20")).andExpect(status().is2xxSuccessful());
 		
 //		mvc.perform(get("/comic?id=1")).andExpect(status().isNotFound());	
 		
@@ -126,7 +126,7 @@ public class NewComicControllerMockMvcTest {
 	public void shouldPutSingleCategoryIntoModel() throws Exception {
 		when(categoryRepo.findById(20L)).thenReturn(Optional.of(category));
 		
-		mvc.perform(get("/category?id=20")).andExpect(model().attribute("categorys", is(category)));
+		mvc.perform(get("/category?id=20")).andExpect(model().attribute("category", is(category)));
 		
 //		public void shouldPutSingleComicIntoModel() throws Exception {
 //			when(comicRepo.findById(1L)).thenReturn(Optional.of(comic));

@@ -15,10 +15,10 @@
     </header>
     
     <main>
-      <h2>Products:</h2>
-      <div th:each = "product:${category.products}">
-        <a th:href = "@{/product(id=${product.id})}"
-        th:text = "${product.name}"></a>
+      <h2>Comics:</h2>
+      <div th:each = "comic:${category.comics}">
+        <a th:href = "@{/comic(id=${comic.id})}"
+        th:text = "${comic.name}"></a>
       </div>
 
     </main>

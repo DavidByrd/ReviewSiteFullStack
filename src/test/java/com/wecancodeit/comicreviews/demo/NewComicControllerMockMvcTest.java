@@ -72,7 +72,7 @@ public class NewComicControllerMockMvcTest {
 	public void shouldPutSingleComicIntoModel() throws Exception {
 		when(comicRepo.findById(1L)).thenReturn(Optional.of(comic));
 		
-		mvc.perform(get("/comic?id=1")).andExpect(model().attribute("comics", is(comic)));
+		mvc.perform(get("/comic?id=1")).andExpect(model().attribute("comic", is(comic)));
 	}
 	
 	@Test

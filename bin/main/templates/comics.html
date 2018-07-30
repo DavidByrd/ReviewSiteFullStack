@@ -19,5 +19,56 @@
 		<a href="http://localhost:8080/show-comics">Back to home</a>
 	</div>
 
+	<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>comics</title>
+</head>
+<body>
+	<h1>A List of Comic Titles</h1>
+
+
+	<div th:each="ComicReview: ${ComicReviews}">
+		<li>
+		<a th:href="@{/ComicReview(comicId=${ComicReview.Id})}" th:text="${ComicReview.title}"></a>
+		</li>
+	</div>
+
+	<form method="POST">
+		<div>
+			<label>Enter Comic Name: </label>
+			<input type="text" name="comicTitle">
+		</div>
+
+		<div>
+			<label>Enter Comic Category</label>
+			<input type="text" name="comicCategory">
+		</div>
+
+		<div>
+			<label>Enter comic Issue</label>
+			<input type="text" name="comicIssue">
+		</div>
+
+		<div>
+			<button th:formaction="@{delete-comic}">delete comic</button>
+		</div>
+
+	</form>
+
+	<form method="GET">
+		<div>
+			<label>Enter Comic Title</label>
+			<input type="text" name="comicTitle">
+		</div>
+
+		<div>
+			<button th:formactiont="@{/find-by-title}">find comic</button>
+		</div>
+	</form>
+
+</body>
+</html>
+
 </body>
 </html>

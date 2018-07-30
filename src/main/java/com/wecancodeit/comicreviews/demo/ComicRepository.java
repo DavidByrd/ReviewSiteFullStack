@@ -10,4 +10,6 @@ public interface ComicRepository extends CrudRepository<Comic, Long> {
 	
 	Collection<Comic> findByCategoryId(Long id);
 
+	Comic findByTitle(String title);
+
 }

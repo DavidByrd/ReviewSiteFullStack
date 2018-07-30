@@ -1,5 +1,6 @@
 package com.wecancodeit.comicreviews.demo;
 
+
 import java.util.ArrayList;
 import static java.lang.String.format;
 import java.util.Collection;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Comic {
+public class Tags {
 	
 	@Id
 	@GeneratedValue
@@ -28,30 +29,32 @@ public class Comic {
 	@ManyToOne
 	private Category category;
 	
-	
+	@JsonIgnore
+	@ManyToOne
+	private Comic comic;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "comic")
 	private Collection<Issue>issues;
+
+	private String name;
 	
 	public Collection<String> getCategoriesURLs() {
 		Collection<String> urls = new ArrayList<>();
-		for(Category c: categorys) {
-			urls.add(format("/comics/%id/category/%s", this.getId(), c.getName()));
+		for(Category t: tags) {
+			urls.add(format("/tags/%id/category/%s", this.getId(), t.getName()));
 		}
 		return urls;
 	}
 
-	public Comic() {
+	public void Comic() {
 		
 	}
 	
-	public Comic(String title, String description, String review, Category category) {
-//		this.comicId = comicId;
-		this.title = title;
+	public Tags(String name, String description) {
+		this.name = name;
 		this.description = description;
-		this.review = review;
-		this.category = category;
+		
 	}
 	
 	
@@ -109,5 +112,8 @@ public class Comic {
 		return category;
 	}
 	
+
+}
+
 
 }

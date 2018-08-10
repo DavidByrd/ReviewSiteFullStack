@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Tags {
+public class Tag {
 	
 	@Id
 	@GeneratedValue
@@ -39,19 +39,19 @@ public class Tags {
 
 	private String name;
 	
-	public Collection<String> getCategoriesURLs() {
-		Collection<String> urls = new ArrayList<>();
-		for(Category t: tags) {
-			urls.add(format("/tags/%id/category/%s", this.getId(), t.getName()));
-		}
-		return urls;
-	}
+//	public Collection<String> getCategoriesURLs() {
+//		Collection<String> urls = new ArrayList<>();
+//		for(Category t: categories) {
+//			urls.add(format("/tags/%id/category/%s", this.getId(), t.getName()));
+//		}
+//		return urls;
+//	}
 
 	public void Comic() {
 		
 	}
 	
-	public Tags(String name, String description) {
+	public Tag(String name, String description) {
 		this.name = name;
 		this.description = description;
 		
@@ -77,7 +77,7 @@ public class Tags {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Comic other = (Comic) obj;
+		Tag other = (Tag) obj;
 		if (id != other.id)
 			return false;
 		return true;
@@ -108,12 +108,10 @@ public class Tags {
 		return issues;
 	}
 	
-	public Collection<Category> getCategorys() {
-		return category;
-	}
+
 	
 
 }
 
 
-}
+

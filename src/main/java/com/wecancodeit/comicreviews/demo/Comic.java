@@ -34,13 +34,8 @@ public class Comic {
 	@OneToMany(mappedBy = "comic")
 	private Collection<Issue>issues;
 	
-	public Collection<String> getCategoriesURLs() {
-		Collection<String> urls = new ArrayList<>();
-		for(Category c: categorys) {
-			urls.add(format("/comics/%id/category/%s", this.getId(), c.getName()));
-		}
-		return urls;
-	}
+	
+	
 
 	public Comic() {
 		
@@ -105,9 +100,13 @@ public class Comic {
 		return issues;
 	}
 	
-	public Collection<Category> getCategorys() {
+	public Category getCategory() {
 		return category;
+		
+	}
+	
+	
 	}
 	
 
-}
+

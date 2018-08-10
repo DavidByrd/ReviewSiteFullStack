@@ -8,6 +8,6 @@ public interface CategoryRepository extends CrudRepository<Category, Long> {
 
 	Category findByNameIgnoreCaseLike(String categoryName);
 
-	Tags save(Tags thumbsUp);
+	Tag save(Tag thumbsUp);
 
 }

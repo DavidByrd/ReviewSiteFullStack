@@ -7,11 +7,11 @@ import org.springframework.data.repository.CrudRepository;
 
 
 
-public interface tagRepository<T> extends CrudRepository<Tags,Long > {
+public interface TagRepository extends CrudRepository<Tag,Long > {
 	
-Collection<Tags> findByCategory(Category category);
+Collection<Tag> findByCategory(Category category);
 	
-	Collection<Tags> findByCategoryId(Long id);
+	Collection<Tag> findByCategoryId(Long id);
 
 	Comic findByName(String name);
 

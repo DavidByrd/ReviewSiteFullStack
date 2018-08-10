@@ -1,4 +1,4 @@
-package com.wecancodeit.comicreviews.demo
+package com.wecancodeit.comicreviews.demo;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TagRestController {
 	
 	@Resource
-	private tagRepository tagRepo;
+	private TagRepository tagRepo;
 	
 	@Resource
 	private ComicRepository comicRepo;
